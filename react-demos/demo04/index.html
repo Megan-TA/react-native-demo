@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      // 自定义组件
+      var HelloMessage = React.createClass({
+        render: function() {
+          return <h1>Hello {this.props.name}   你是不是在 {this.props.status}</h1>;
+        }
+      });
+
+      ReactDOM.render(
+        <HelloMessage name="华哥" status="加班"/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
