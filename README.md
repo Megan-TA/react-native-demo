@@ -59,6 +59,4 @@ tion: Failed to install all
 
 默认gradle版本为2.2.3 前面更改gradle为2.14.1
 
-修改build.gradle文件下 classpath 'com.android.tools.build:gradle:2.2.3'版本号
-
-
+修改build.gradle文件下 classpath 'com.android.tools.build:gradle:2.2.3'版本号为 'com.android.tools.build:gradle:1.2.3'
