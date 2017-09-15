@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+      function test (args) {
+        alert(args)
+      }
+
+      var app = <button onClick={test.bind(this, 'hello')} style={{
+        backgroundColor: 'red'
+      }}>点我</button>
+
+      // React.createElement('h3', null, '输入')
+      // 延展属性 
+      var props = {}
+      props.foo = '1'
+      props.bar = '44'
+      // `<h1 {...props} foo='2'>使用ES6语法</h1>`
+      //React.createElement('h1', React.__spread({}, props, {foo: '2'}), '使用ES6语法')
+
+
+      // 显示一段HTML字符串，而不是HTML节点
+      // 借助_HTML属性
+      //var test1 = `<div>{{_html:'<h1>测试显示一段HTML字符串</h1>'}</div>`
+
+      ReactDOM.render(app, document.getElementById('example'))
+
+
+    </script>
+  </body>
+</html>
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      // 生命周期
+     var HelloMessage = React.createClass({
+        // 1. 创建阶段
+        getDefaultProps: function () {
+            // 创建类的时候被调用 this.props是该组件的默认属性
+            console.log('1. getDefaultProps')
+            return {}
+        },
+        // 2. 实例化阶段
+        getInitialState: function () {
+            // 初始化组件的State值 其返回值会赋值给组件的this.state属性
+            console.log('2. getInitialState')
+            return {}
+        },
+        // 3. 
+        componentWillMount: function () {
+            // 处理业务逻辑
+            console.log('3. componentWillMount')
+        },
+        // 4.
+        render: function () {
+            // 根据state值 渲染并返回一个虚拟DOM
+            console.log('4. render')
+            return <h1 style={{color:'#000'}}>Hello {this.props.name}</h1>
+        },
+        // 5. 通过返回的虚拟DOM来创建真实的DOM结构
+        componentDidMount: function () {
+            // 组件内部可以通过this.getDOMNode()来获取当前组件节点
+            console.log('5. componentDidMount')
+        },
+        // 6. 主要发生在用户操作之后或父组件有更新的时候 此时会根据用户的操作行为进行相应的页面结构的调整
+        componentWillReceiveProps: function () {
+            // 该方法发生在this.props被修改或父组件调用setProps()之后
+            console.log('6. compomentWillReceiveProps')
+        },
+        // 7.
+        shouldComponentUpdate: function () {
+            // 用来拦截新的props或state 根据逻辑来判断是否更新
+            console.log('7. shouldComponentUpdate')
+            return true
+        },
+        // 8. shouldComponentUpdate返回true更新组件
+        componentWillUpdate: function () {
+            console.log('8. componentWillUpdate')
+        },
+        // 9. 组件更新完毕 
+        componentDidUpdate: function () {
+            // 适合做一些DOM操作
+            console.log('9. componentDidUpdate') 
+        },
+        // 10. 销毁
+        componentWillUnmount: function () {
+            console.log('10. componentWillUnmount')
+        }
+    })
+
+    ReactDOM.render(<HelloMessage name="React-Native"/>, document.getElementById('example'))
+
+
+    </script>
+  </body>
+</html>
+
