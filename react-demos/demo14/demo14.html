@@ -4,10 +4,36 @@
     <script src="../build/react.js"></script>
     <script src="../build/react-dom.js"></script>
     <script src="../build/browser.min.js"></script>
+    <style>
+      .box{
+        width: 1000px;
+        height: 1000px;
+        border: 1px solid #000;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .test1{
+        width: 100px;
+        height: 100px;
+        background: red
+      }
+      .test2{
+        width: 100px;
+        height: 100px;
+        background: blue
+      }
+    </style>
   </head>
   <body>
-    <div id="example"></div>
-    <script type="text/babel">
+    <div id="example">
+      <div class="box">
+        <div class="test1">11</div>
+        <div class="test2"></div>
+      </div>
+    </div>
+    <!-- <script type="text/babel">
 
       function test (args) {
         alert(args)
@@ -33,7 +59,7 @@
       ReactDOM.render(app, document.getElementById('example'))
 
 
-    </script>
+    </script> -->
   </body>
 </html>
 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../build/react.js"></script>
+    <script src="../build/react-dom.js"></script>
+    <script src="../build/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+
+        var Parent = React.createClass(
+            {
+                click: function () {
+                    // this.refs.child.getDOMNode().style.color='red'
+                    alert(1)
+                },
+                render: function () {
+                    return (
+                        <div onClick={this.click}>
+                            Parent IS  <Child name={this.props.name} ref="child"></Child>
+                        </div>
+                    )
+                }
+            }
+        )
+
+        var Child = React.createClass({
+            render: function () {
+                return (
+                    <span>{this.props.name}</span>
+                )
+            }
+        })
+
+        ReactDOM.render(<Parent name="React父子组件通信" />, document.getElementById('example'))
+
+    </script>
+  </body>
+</html>
+
