@@ -14,7 +14,7 @@ import {
   View
 } from 'react-native';
 
-import { MainTabs } from './src/components/project/App'
+import myApp from './src/myApp'
 
 // export default App
-AppRegistry.registerComponent('demo', () => MainTabs);
+AppRegistry.registerComponent('demo', () => myApp);
